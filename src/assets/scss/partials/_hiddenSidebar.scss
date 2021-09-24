@@ -1,0 +1,25 @@
+.hiddenSidebar{
+    // height: 100vh;
+    width: 100vw;
+    // background-color: $white;
+    // position: fixed;
+    // top: 0;
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    // max-width: 467px;
+    // min-width: 200px;
+    overflow: auto;
+    background-color: $white;
+    height: 100vh;
+    transition: $sidedisplay-transition;
+    right: 0;
+    // margin-right: 100vh;
+    box-shadow: 0px 3px 6px #0058FD0D;
+    opacity: 1;
+    // @media (min-width: 1px) and (max-width: #{map-get($grid-breakpoints, 'lg') - .02px}) {
+    // border-radius: 0px;
+      
+    // }
+}

@@ -1,0 +1,17 @@
+$primary: #0967D2;
+$blackPerl: #040415;
+$fadedGrey: #F1F2F4;
+$white: #FFFFFF;
+$yellow: #F6B900;
+$grey: #F0F2F4;
+
+
+$sidedisplay-transition: margin-right .35s ease-in-out, right .35s ease-in-out !default;
+
+// CUSTOM THEME
+$theme-colors: (
+  "primary": $primary,
+  "yellow": $yellow,
+  "grey": $grey
+);
+

@@ -1,0 +1,19 @@
+.navbar{
+    background: #F9F9FC;
+    /* Navbar Shadow */
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    box-shadow: 0px 1px 0px #E5E9F2;
+    .nav-item{
+        margin-left: 20px;
+        margin-right: 20px;
+        .nav-link{
+            font-weight: 700;
+            // color: rgba(0, 0, 0, 1) !important;
+            font-size: 16px;
+        }
+    }
+}
+.transparent-nav{
+    box-shadow: none;
+}
