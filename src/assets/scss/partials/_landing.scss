@@ -14,7 +14,7 @@ h6 {
     cursor: pointer;
 }
 .landing {
-  margin-top: 100px;
+  margin-top: 90px;
   .hastle-left {
     background: url("../../images/backgrounds/dotted-arrow.jpg");
     width: 100%;
@@ -40,7 +40,8 @@ h6 {
 }
 
 #howToBuy {
-  background: $blackPerl;
+  // background: $blackPerl;
+  background: $blackPerl url("../../images/backgrounds/DarkBg.jpg");
   padding-top: 50px;
   padding-bottom: 50px;
   min-height: 990px;
@@ -68,4 +69,48 @@ h6 {
         margin-left: -100px;
         margin-top: 100px;
     } 
+}
+
+#slider{
+  min-height: 80vh;
+  // margin-top: 100px;
+  background: #F9F9FC url("../../images/backgrounds/CarouselBg.jpg");
+
+  .carousel-control-prev, .carousel-control-next{
+    top: 89%;
+    width: 5%;
+  }
+  
+  .carousel-indicators{
+    li{
+      width: 10px;
+      height: 9px;
+      border-radius: 100%;
+      border: 1px solid #454141;
+    }
+    .active{
+      background-color: #E78A00;
+    }
+  }
+  .carousel-control-prev{
+    left: 12%;
+  }
+  .carousel-control-next{
+    left: 17%;
+  }
+  .carousel-control-next-icon{
+    background-image: url("../../images/svgs/arrow-left.svg") !important;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-control-prev-icon{
+    background-image: url("../../images/svgs/arrow-right.svg") !important;
+    width: 40px;
+    height: 40px;
+  }
+  .number-footer{
+    position: relative;
+    bottom: 20px;
+  }
 }

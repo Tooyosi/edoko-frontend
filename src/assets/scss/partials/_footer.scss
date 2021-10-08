@@ -1,10 +1,14 @@
 .footer {
-  background: $blackPerl;
+  //   background: $blackPerl;
+  background: $blackPerl url("../../images/backgrounds/DarkBg.jpg");
+  padding-top: 70px;
+  padding-bottom: 70px;
   color: $white;
   .footer-input {
     background-color: $white;
     padding: 2px 10px;
     height: 50px;
+    width: fit-content;
     &:focus-within {
       color: #495057;
       background-color: #fff;
@@ -13,7 +17,7 @@
 
     input {
       // width: 100%;
-    //   height: 100%;
+      //   height: 100%;
       outline: none;
       padding: 0;
       margin: 0;

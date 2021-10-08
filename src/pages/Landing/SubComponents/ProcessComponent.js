@@ -43,7 +43,7 @@ export default function ProcessComponent({toggle, ...props}) {
                             After shopping on cartalogue, you can track orders, we also <br /> provide notifications anytime there is an update on your order.
                             </p>
                             {/* <Link to="/order" className="btn btn-dark rounded-pill">Track an Order</Link> */}
-                            <span onClick={()=> toggle({order: true})} className="btn btn-dark rounded-pill">Track an Order</span>
+                            <span onClick={()=> toggle({order: true})} className="btn btn-dark rounded-pill py-3  px-5">Track an Order</span>
 
                     </Col>
                 </Row>

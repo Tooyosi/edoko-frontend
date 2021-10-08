@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Col, Container, Row, UncontrolledCollapse, Button, Collapse } from 'reactstrap'
+import { Col, Container, Row,  Collapse } from 'reactstrap'
+import Icofont from 'react-icofont';
 
 export default function Faq({toggle: showContact}) {
     const [collapse, setCollapse] = useState(false);
@@ -34,7 +35,7 @@ export default function Faq({toggle: showContact}) {
     ]
     return (
         <div id="faq">
-            <Container>
+            <Container className="pt-5">
                 <Row>
                     <Col md="12" className="text-center my-5">
                         <h1>Frequently Asked Question</h1>
@@ -47,7 +48,7 @@ export default function Faq({toggle: showContact}) {
                             If your question is not list here, please feel free to make a manual support.
                         </p>
                         {/* <Link to="/" className="btn btn-dark rounded-pill px-4">Ask a question</Link> */}
-                        <span  onClick={()=> showContact({contact: true})} className="btn btn-dark rounded-pill px-4">Ask a question</span>
+                        <span  onClick={()=> showContact({contact: true})} className="btn btn-dark rounded-pill px-5 py-3">Ask a question</span>
 
                     </Col>
                     <Col md="8">
@@ -73,7 +74,7 @@ export default function Faq({toggle: showContact}) {
                                         <h5 className="mb-0 font-weight-light">{item.question}</h5>
 
                                         {/* <i className="fal fa-abacus faq-icon"></i> */}
-                                        <i class={`ml-auto icofont-caret-${activeState == item.state? "down":"right"}`}></i>
+                                        <Icofont icon={`caret-${activeState == item.state? "down":"right"}`} className={`ml-auto`} />
                                     </div>
                                     <Collapse
                                         isOpen={activeState == item.state}

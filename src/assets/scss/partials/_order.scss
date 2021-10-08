@@ -1,3 +1,44 @@
 .order{
     margin-top: 100px;
+    min-height: 80vh;
+    .success-status{
+        background-color:#EEFFF5;        ;
+        color: #27AE60;        ;
+    }
+    .tracking-div{
+        background-color: $fadedGrey;
+        padding: 30px;
+        min-height: 593px;
+        height: 100%;
+        border-radius: 20px;
+        .inner{
+            background-color: white;
+            height: 100%;
+            border-radius: 10px;
+            .item{
+                border-top: 1px solid $fadedGrey;
+                border-bottom: 1px solid $fadedGrey;
+                .img-div{
+                    position: relative;
+                    img{
+                        position: absolute;
+                        bottom: 0;
+                    }
+                    .line{
+                        position: absolute;
+                        width: 2px;
+                        left: 18px;
+                        height: 76px;
+                        top: -34%;
+                        // bottom: 75%;
+                        // background-color: #27AE60;                
+                    }
+                }
+                .contents-div{
+                    // position: absolute;
+                    margin-left: 34px;
+                }
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@ import Header from '../../components/common/Header'
 import HiddenSidebar from '../../components/common/HiddenSidebar'
 import Contact from '../Contact'
 import TrackOrder from '../Orders/Track'
+import CarouselSlides from './SubComponents/CarouselSlides'
 import Faq from './SubComponents/Faq'
 import HastleComponent from './SubComponents/HastleComponent'
 import HowtoBuy from './SubComponents/HowtoBuy'
@@ -27,18 +28,19 @@ export default function Landing() {
         <>
             <Header toggler={toggler} toggle={toggle} />
             <div className="landing">
+                <CarouselSlides />
                 <HastleComponent />
                 <HowtoBuy />
                 <ProcessComponent toggle={toggle}/>
                 <Faq toggle={toggle}/>
                 <ShoppingComponent />
             </div>
-            <Footer />
+            <Footer toggle={toggle} />
             <HiddenSidebar show={toggler.contact}>
-                <Contact />
+                {toggler.contact && <Contact />}
             </HiddenSidebar>
             <HiddenSidebar show={toggler.order}>
-                <TrackOrder />
+                {toggler.order && <TrackOrder />}
             </HiddenSidebar>
 
         </>

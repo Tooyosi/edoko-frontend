@@ -3,25 +3,18 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     Container
 } from 'reactstrap';
 import Logo from './Logo';
 import { Link } from "react-router-dom"
-
+import Icofont from 'react-icofont';
 const Header = ({ toggler, toggle: toggleSide, ...props }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isDropdown, setIsDropdown] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
-    const toggleDropdown = (param) => setIsDropdown(param || !isDropdown);
 
     const sideOpen = Object.values(toggler).includes(true)
 
@@ -33,26 +26,24 @@ const Header = ({ toggler, toggle: toggleSide, ...props }) => {
         }
     }
 
-    const changeNavActive = (param) => {
-        // console.log(param)
-
-    }
-
-    window.addEventListener("scroll", changeNavActive)
     return (
-        <Navbar color={`${sideOpen ? "transparent" : "white"}`} style={{boxShadow: sideOpen? 'none': '0px 1px 0px #E5E9F2'}} fixed="top" light expand="md">
+        <Navbar color={`${sideOpen ? "transparent" : "white"}`} style={{ boxShadow: sideOpen ? 'none' : '0px 1px 0px #E5E9F2' }} fixed="top" light expand="md">
             <Container>
                 <Link className="nav-brand" to="/">
-                    <Logo style={{ height: "50px" }} />
+                    <Logo style={{ height: "50px" }} className="img-fluid" />
                 </Link>
                 {sideOpen ?
-                    <i class="icofont-close icofont-2x pull-right cursor-pointer" onClick={() => toggleSide({ contact: false, order: false })}></i>
+                    <Icofont icon="close" size="2" className="pull-right cursor-pointer" onClick={() => {
+                        toggleSide({ contact: false, order: false })
+                        setIsOpen(false)
+
+                    }} />
 
                     :
                     <>
                         <NavbarToggler onClick={toggle} />
                         <Collapse isOpen={isOpen} navbar>
-                            <Nav className="ml-auto" navbar>
+                            <Nav className="ml-auto mt-md-0 mt-3" navbar>
                                 <NavItem className={`${getActiveClassName('/')}`}>
                                     <NavLink className="nav-link" href="/#howToBuy">How to buy</NavLink>
                                 </NavItem>
@@ -65,7 +56,7 @@ const Header = ({ toggler, toggle: toggleSide, ...props }) => {
                                 </NavItem>
                                 <NavItem className={`${getActiveClassName('/blog')}`}>
                                     {/* <Link to="/order"  className=" btn btn-dark rounded-pill" >Track an Order</Link> */}
-                                    <span  onClick={() => toggleSide({ order: true })} className=" btn btn-dark rounded-pill" >Track an Order</span>
+                                    <span onClick={() => toggleSide({ order: true })} className=" btn btn-dark rounded-pill" >Track an Order</span>
 
                                 </NavItem>
                             </Nav>

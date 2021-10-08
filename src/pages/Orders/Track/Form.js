@@ -2,23 +2,38 @@ import React from 'react'
 import FormsWrapper, { showFieldError } from '../../../components/common/Formik'
 import * as Yup from "yup"
 import { Input, Button } from 'reactstrap'
+import { trackOrder } from '../../../services/order'
+import { toast } from 'react-toastify'
 
 const validation = Yup.object().shape({
-    email: Yup.string().email()
-        .required("Required"),
+    // email: Yup.string().email()
+    //     .required("Required"),
     orderNumber: Yup.string()
         .required("Required"),
 })
 
-export default function Form() {
+export default function Form({setState, ...props}) {
     return (
         <FormsWrapper
             values={{
                 email: '',
                 orderNumber: '',
             }}
-            handleSubmit={() => {
-
+            handleSubmit={async(values, {resetForm}) => {
+                console.log({values})
+                try {
+                    let {data} = await trackOrder(values.orderNumber)
+                    // console.log({data})
+                    setState((prevState)=>({
+                        ...prevState,
+                        orderDetails: {
+                            ...data.data
+                        },
+                        activeTab: "2"
+                    }))
+                } catch (error) {
+                    toast.error(error?.response?.data?.message || "An error occured")
+                }
             }}
             validationSchema={validation}>
             {
@@ -36,7 +51,7 @@ export default function Form() {
                             <h1 className="">Track your orders</h1>
                             <p>Follow your orders in real time, from shipping to delivery</p>
 
-                            <div className="form-group ">
+                            {/* <div className="form-group ">
                                 <label className="">Email Address</label>
                                 <Input
                                     name="email"
@@ -47,7 +62,7 @@ export default function Form() {
                                     invalid={errors.email && touched.email}
                                 />
                                 {showFieldError("email", errors, touched)}
-                            </div>
+                            </div> */}
 
                             <div className="form-group ">
                                 <label className="">Order Number</label>

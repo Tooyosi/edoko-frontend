@@ -4,10 +4,13 @@ import './index.css';
 import "./assets/scss/modern.scss"
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
+import "react-toastify/dist/ReactToastify.min.css";
+import { ToastContainer } from 'react-toastify';
 
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
+    <ToastContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );

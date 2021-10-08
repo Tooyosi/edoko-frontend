@@ -15,7 +15,7 @@ const TransparentHeader = (props) => {
                 <Link className="nav-brand" to="/">
                     <Logo style={{ height: "50px" }} />
                 </Link>
-                <i class="icofont-close icofont-2x pull-right cursor-pointer" onClick={()=> history.push('/')}></i>
+                <i className="icofont-close icofont-2x pull-right cursor-pointer" onClick={()=> history.push('/')}></i>
                 </Container>
         </Navbar>
     );

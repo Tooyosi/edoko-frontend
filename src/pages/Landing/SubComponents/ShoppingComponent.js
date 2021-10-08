@@ -1,6 +1,15 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 
+export const DownloadImages = () => {
+    return (<>
+        <a>
+            <img src={require('../../../assets/images/svgs/GooglePlay.svg').default} className="mr-2" />
+        </a>
+        <a>
+            <img src={require('../../../assets/images/svgs/AppleStoreIcon.svg').default} />
+        </a></>)
+}
 export default function ShoppingComponent() {
     return (
         <div id="shopping" className="mt-5">
@@ -15,12 +24,7 @@ export default function ShoppingComponent() {
 
                             <div className="mt-4">
                                 <h5>Get the App</h5>
-                                <a>
-                                    <img src={require('../../../assets/images/svgs/GooglePlay.svg').default} className="mr-2" />
-                                </a>
-                                <a>
-                                    <img src={require('../../../assets/images/svgs/AppleStoreIcon.svg').default} />
-                                </a>
+                                <DownloadImages  />
                             </div>
                         </div>
                     </Col>
